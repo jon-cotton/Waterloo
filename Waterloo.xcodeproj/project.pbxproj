@@ -7,13 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D611D3A1C5BF1D600E1F243 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D611D391C5BF1D600E1F243 /* Semaphore.swift */; };
 		2D8793311C5BF0D700C8DDF5 /* Waterloo.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8793301C5BF0D700C8DDF5 /* Waterloo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D8793391C5BF10200C8DDF5 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8793381C5BF10200C8DDF5 /* Queue.swift */; };
+		2D87933B1C5BF13800C8DDF5 /* SerialQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D87933A1C5BF13800C8DDF5 /* SerialQueue.swift */; };
+		2D87933D1C5BF16200C8DDF5 /* ConcurrentQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D87933C1C5BF16200C8DDF5 /* ConcurrentQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D611D391C5BF1D600E1F243 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		2D87932D1C5BF0D700C8DDF5 /* Waterloo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Waterloo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D8793301C5BF0D700C8DDF5 /* Waterloo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Waterloo.h; sourceTree = "<group>"; };
 		2D8793321C5BF0D700C8DDF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D8793381C5BF10200C8DDF5 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		2D87933A1C5BF13800C8DDF5 /* SerialQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialQueue.swift; sourceTree = "<group>"; };
+		2D87933C1C5BF16200C8DDF5 /* ConcurrentQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +56,10 @@
 			children = (
 				2D8793301C5BF0D700C8DDF5 /* Waterloo.h */,
 				2D8793321C5BF0D700C8DDF5 /* Info.plist */,
+				2D8793381C5BF10200C8DDF5 /* Queue.swift */,
+				2D87933A1C5BF13800C8DDF5 /* SerialQueue.swift */,
+				2D87933C1C5BF16200C8DDF5 /* ConcurrentQueue.swift */,
+				2D611D391C5BF1D600E1F243 /* Semaphore.swift */,
 			);
 			path = Waterloo;
 			sourceTree = "<group>";
@@ -130,6 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D8793391C5BF10200C8DDF5 /* Queue.swift in Sources */,
+				2D87933B1C5BF13800C8DDF5 /* SerialQueue.swift in Sources */,
+				2D611D3A1C5BF1D600E1F243 /* Semaphore.swift in Sources */,
+				2D87933D1C5BF16200C8DDF5 /* ConcurrentQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +189,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -215,7 +231,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -228,28 +244,33 @@
 		2D8793361C5BF0D700C8DDF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Waterloo/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joncotton.Waterloo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		2D8793371C5BF0D700C8DDF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Waterloo/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.joncotton.Waterloo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -276,6 +297,7 @@
 				2D8793371C5BF0D700C8DDF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
