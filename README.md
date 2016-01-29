@@ -40,6 +40,6 @@ q.async {
     sem.signal()
 }
 
-sem.wait(1)
+sem.wait(1) // wait for a max of 1 sec
 print("HERE")
 ```
